@@ -1,0 +1,292 @@
+@font-face {
+        font-family: 'Pirata One';
+        src: url('assets/fonts/PirataOne-Regular.ttf') format('truetype');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+      :root {
+        color-scheme: light;
+        --background: #f4ecd8;
+        --brand: #e46b25;
+      }
+      * { box-sizing: border-box; }
+      html { min-height: 100%; background: var(--background); }
+      body {
+        min-height: 100vh;
+        min-height: 100svh;
+        margin: 0;
+        background: var(--background);
+      }
+      .site-header { padding: 28px 44px; }
+      .wordmark {
+        display: inline-block;
+        color: var(--brand);
+        font-family: 'Pirata One', Georgia, serif;
+        font-size: 52px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0;
+        text-decoration: none;
+      }
+      .wordmark:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 8px;
+      }
+      @media (max-width: 600px) {
+        .site-header { padding: 24px; }
+        .wordmark { font-size: 38px; }
+      }
+
+/* Three linked destinations on the home page. */
+.home-main {
+  min-height: calc(100svh - 108px);
+  display: grid;
+  place-items: center;
+  padding: 24px 24px 72px;
+}
+.mindmap {
+  position: relative;
+  width: min(100%, 1040px);
+  aspect-ratio: 5 / 3;
+  color: #000000;
+}
+.mindmap-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 1.5;
+  pointer-events: none;
+}
+.mindmap-lines path { vector-effect: non-scaling-stroke; }
+.mindmap-link {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 33%;
+  height: 25%;
+  border: 1.5px solid #000000;
+  border-radius: 50%;
+  color: #000000;
+  background: var(--background);
+  font-family: 'Pirata One', Georgia, serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+.mindmap-link:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 7px;
+}
+.movement { left: 50%; top: 22%; color: #000000; }
+.merch { left: 25%; top: 72%; color: #0000ff; }
+.member { left: 75%; top: 72%; color: #103c2c; }
+@media (max-width: 600px) {
+  .home-main { min-height: calc(100svh - 86px); padding: 20px 20px 64px; }
+  .mindmap { aspect-ratio: 4 / 5; max-width: 430px; }
+  .mindmap-link { width: 44%; height: 22%; font-size: clamp(24px, 6.5vw, 32px); }
+}
+
+/* Footer remains at the bottom on short pages and follows long legal content. */
+body { display: flex; flex-direction: column; }
+.site-header, .site-footer { flex-shrink: 0; }
+body > main { flex: 1; }
+.home-main { min-height: 0; padding-bottom: 36px; }
+.site-footer { padding: 12px 44px 24px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 26px; }
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: #000;
+  font-family: 'Pirata One', Georgia, serif;
+  font-size: 20px;
+  text-decoration: none;
+}
+.site-footer a:focus-visible { outline: 2px solid #000; outline-offset: 4px; }
+.legal-content {
+  width: min(calc(100% - 88px), 760px);
+  margin: 32px auto 64px;
+  color: #000;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.legal-content h1 {
+  margin: 0 0 32px;
+  font-family: 'Pirata One', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(36px, 6vw, 52px);
+  line-height: 1.15;
+}
+.legal-content h2 { margin: 32px 0 12px; font-size: 21px; line-height: 1.4; }
+.legal-content p { margin: 0 0 18px; }
+.legal-content address { font-style: normal; margin-bottom: 18px; }
+.legal-content a { color: inherit; text-underline-offset: 3px; }
+.legal-date { margin-top: 36px; font-size: 14px; }
+@media (max-width: 600px) {
+  .home-main { min-height: 0; padding-bottom: 32px; }
+  .site-footer { padding: 12px 24px 20px; }
+  .legal-content { width: calc(100% - 48px); margin-top: 24px; }
+}
+
+/* Member rows grow with their content; additional rows extend the page. */
+.members-main {
+  width: min(calc(100% - 88px), 1040px);
+  margin: 64px auto;
+}
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: #000;
+}
+.members-table .member-column { width: 28%; }
+.members-table .social-column { width: 32%; }
+.members-table .about-column { width: 40%; }
+.members-table th, .members-table td {
+  border: 0;
+  padding: 20px 24px;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.members-table tr > * + * { border-left: 1px solid #000; }
+.members-table thead tr > * { border-bottom: 1px solid #000; }
+.members-table tbody tr + tr > * { border-top: 1px solid #000; }
+.members-table thead {
+  font-family: 'Pirata One', Georgia, serif;
+  font-size: 32px;
+  line-height: 1.2;
+}
+.members-table th { font-weight: 400; }
+.members-table tbody {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.members-table tbody tr > :first-child {
+  font-family: 'Pirata One', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.member-name-baumbart { color: #103c2c; }
+.members-table tbody tr { height: 96px; }
+.members-table a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 600px) {
+  .members-main { width: calc(100% - 48px); margin: 40px auto; }
+  .members-table th, .members-table td { padding: 14px 10px; }
+  .members-table thead { font-size: 24px; }
+  .members-table tbody { font-size: 17px; }
+  .members-table tbody tr { height: 80px; }
+}
+
+.member-social p { margin: 0 0 12px; }
+.member-social p:last-child { margin-bottom: 0; }
+
+@media (max-width: 600px) {
+  .members-table .member-column { width: 25%; }
+  .members-table .social-column { width: 35%; }
+  .members-table th, .members-table td { padding-right: 6px; padding-left: 6px; }
+  .members-table tbody { font-size: 16px; }
+  .members-table tbody tr > :first-child { font-size: clamp(16px, 5vw, 22px); }
+  .member-social { font-size: 12px; }
+  .member-social a { white-space: nowrap; }
+}
+
+/* Painterly woodland motifs frame the three destinations. */
+.home-main { padding: 40px 24px 72px; }
+.home-main .mindmap { width: min(78vw, 1040px); aspect-ratio: 9 / 5; }
+.movement-illustrations { position: absolute; inset: 0; pointer-events: none; }
+.movement-motif {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.motif-flowers { left: -1%; top: -4%; width: 19%; height: 46%; }
+.motif-sun { right: -4%; top: -6%; width: 17%; height: 28%; }
+.motif-fox { left: -11%; bottom: -9%; width: 20%; height: 46%; }
+.motif-mushrooms { left: 44%; bottom: -12%; width: 12%; height: 31%; }
+.motif-mouse { right: -9%; bottom: -12%; width: 22%; height: 30%; }
+.mindmap-lines { z-index: 1; }
+.mindmap-link { z-index: 2; }
+@media (max-width: 600px) {
+  .home-main { padding: 56px 20px 96px; }
+  .home-main .mindmap { width: 100%; max-width: 430px; aspect-ratio: 4 / 5; }
+  .motif-flowers { left: -1%; top: -11%; width: 23%; height: 25%; }
+  .motif-sun { right: -1%; top: -10%; width: 23%; height: 18%; }
+  .motif-fox { left: -1%; top: 30%; bottom: auto; width: 25%; height: 30%; }
+  .motif-mouse { right: -1%; top: 34%; bottom: auto; width: 29%; height: 25%; }
+  .motif-mushrooms { left: 40%; top: 87%; bottom: auto; width: 20%; height: 25%; }
+}
+
+/* Quiet, layered woodland behind the home page. */
+.home-page { position: relative; isolation: isolate; }
+.home-page > .site-header,
+.home-page > .home-main,
+.home-page > .site-footer { position: relative; z-index: 1; }
+.home-forest {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  mask-image: linear-gradient(to bottom, transparent 6%, #000 26%, #000 80%, transparent 100%);
+}
+.forest-layer { position: absolute; inset: 0; pointer-events: none; }
+.forest-far { opacity: .12; }
+.forest-near { opacity: .22; }
+.forest-tree {
+  position: absolute;
+  display: block;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: center bottom;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.forest-far-1 { left: 4%; bottom: 16%; height: 48%; }
+.forest-far-2 { left: 25%; bottom: 16%; height: 58%; }
+.forest-far-3 { left: 46%; bottom: 16%; height: 50%; }
+.forest-far-4 { left: 67%; bottom: 16%; height: 56%; }
+.forest-far-5 { left: 88%; bottom: 16%; height: 46%; }
+.forest-near-1 { left: -1%; bottom: 7%; height: 69%; }
+.forest-near-2 { left: 20%; bottom: 7%; height: 61%; }
+.forest-near-3 { left: 40%; bottom: 7%; height: 74%; }
+.forest-near-4 { left: 62%; bottom: 7%; height: 65%; }
+.forest-near-5 { left: 83%; bottom: 7%; height: 72%; }
+.forest-near-6 { left: 105%; bottom: 7%; height: 64%; transform: translateX(-50%) scaleX(-1); }
+@media (max-width: 600px) {
+  .forest-far { opacity: .09; }
+  .forest-near { opacity: .18; }
+  .forest-far-2, .forest-far-4,
+  .forest-near-2, .forest-near-4 { display: none; }
+  .forest-far-1 { left: -10%; bottom: 20%; height: 48%; }
+  .forest-far-3 { left: 50%; bottom: 20%; height: 52%; }
+  .forest-far-5 { left: 110%; bottom: 20%; height: 45%; }
+  .forest-near-1 { left: -22%; bottom: 10%; height: 58%; }
+  .forest-near-3 { left: 35%; bottom: 10%; height: 65%; }
+  .forest-near-5 { left: 87%; bottom: 10%; height: 58%; }
+  .forest-near-6 { left: 125%; bottom: 10%; height: 53%; }
+}
+
+/* The five foreground illustrations now live on The Movement. */
+.movement-main { display: grid; place-items: center; padding: 40px 24px 72px; }
+.movement-scene { position: relative; width: min(78vw, 1040px); aspect-ratio: 9 / 5; }
+@media (max-width: 600px) {
+  .movement-main { padding: 56px 20px 96px; }
+  .movement-scene { width: 100%; max-width: 430px; aspect-ratio: 4 / 5; }
+}
