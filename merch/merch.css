@@ -60,3 +60,9 @@
 .photo-colour-definitions { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
 
 .product-hero[data-cutout="true"], .product-thumbnail img[data-cutout="true"] { object-fit: contain; }
+
+/* Centre the black flat-lay within the gallery frame; keep the source photo intact. */
+.product-zoom, .product-thumbnail { overflow: hidden; }
+.product-hero[data-photo-grade="black-flatlay"], .product-thumbnail img[data-photo-grade="black-flatlay"] { transform: translate(18.4%, 2.66%) scale(1.368); }
+.product-lightbox[data-photo-grade="black-flatlay"] .product-lightbox-frame { width: min(85vw, 1000px, calc((100svh - 146px) * .75)); aspect-ratio: 3 / 4; overflow: hidden; }
+.product-lightbox[data-photo-grade="black-flatlay"] .product-lightbox-image { width: 100%; height: auto; max-width: none; max-height: none; transform: translate(18.4%, 2.66%) scale(1.368); }

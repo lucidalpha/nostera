@@ -55,6 +55,7 @@ for (const product of document.querySelectorAll('.merch-product')) {
     if (Date.now() < suppressClickUntil) { event.preventDefault(); return; }
     if (!lightbox || typeof lightbox.showModal !== 'function') return;
     event.preventDefault();
+    lightbox.dataset.photoGrade = hero.dataset.photoGrade || '';
     lightboxImage.src = zoom.href;
     lightboxImage.alt = hero.alt;
     lightboxImage.dataset.photoGrade = hero.dataset.photoGrade;
