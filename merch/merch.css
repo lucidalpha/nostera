@@ -1,27 +1,31 @@
-/* Product photographs share the quiet typography and colours of NOSTERA. */
+/* A compact photo mindmap, with the same colours and quiet type as NOSTERA. */
 .merch-page { color: #103c2c; font-family: Georgia, serif; }
-.merch-main { width: min(calc(100% - 88px), 1080px); margin: 36px auto 80px; }
-.merch-intro { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 44px; }
-.merch-intro h1 { margin: 0; color: #0000ff; font: 400 clamp(56px, 7vw, 80px)/1 'Pirata One', Georgia, serif; }
-.merch-intro p { margin: 0 0 5px; font-size: 19px; line-height: 1.55; text-align: right; }
-.merch-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; }
-.merch-product { min-width: 0; }
+.merch-page .wordmark { font-size: 44px; }
+.merch-main { width: min(calc(100% - 88px), 760px); margin: 16px auto 48px; }
+.merch-intro { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 24px; }
+.merch-intro h1 { margin: 0; color: #0000ff; font: 400 46px/1 'Pirata One', Georgia, serif; }
+.merch-intro p { margin: 0; font-size: 14px; line-height: 1.5; text-align: right; }
+.merch-map { --pair-width: 280px; --line-height: 64px; position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 96px; row-gap: var(--line-height); isolation: isolate; }
+.merch-pair { grid-column: 1 / -1; justify-self: center; width: var(--pair-width); margin: 0; position: relative; z-index: 1; }
+.merch-pair img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.merch-connections { position: absolute; top: calc(var(--pair-width) * .75); left: 0; width: 100%; height: var(--line-height); fill: none; stroke: #000; stroke-width: 1.2; pointer-events: none; z-index: 0; }
+.merch-connections path { vector-effect: non-scaling-stroke; }
+.merch-product { position: relative; width: min(100%, 250px); min-width: 0; justify-self: center; z-index: 1; }
 .product-gallery { margin: 0; }
-.product-zoom { position: relative; display: block; color: #f4ecd8; }
+.product-zoom { display: block; color: inherit; }
 .product-hero { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
-.product-zoom-label { position: absolute; bottom: 14px; right: 14px; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid currentColor; border-radius: 50%; background: #103c2c; font: 24px/1 Georgia, serif; }
-.product-gallery-caption { display: flex; justify-content: space-between; gap: 16px; margin-top: 12px; font-size: 14px; line-height: 1.5; }
-.product-gallery-count { font-variant-numeric: tabular-nums; }
-.product-thumbnails { display: flex; gap: 12px; margin-top: 16px; }
-.product-thumbnail { display: block; padding: 0 0 6px; border-bottom: 1px solid transparent; }
+.product-gallery-caption { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 12px; line-height: 1.4; }
+.product-gallery-count { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.product-thumbnails { display: flex; gap: 9px; margin-top: 12px; }
+.product-thumbnail { display: block; padding: 0 0 5px; border-bottom: 1px solid transparent; }
 .product-thumbnail[aria-current="true"] { border-bottom-color: #000; }
-.product-thumbnail img { display: block; width: 58px; height: 74px; object-fit: cover; }
-.product-info { margin-top: 24px; }
-.product-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; }
-.product-heading h2 { margin: 0; font: 400 42px/1.1 'Pirata One', Georgia, serif; }
-.product-heading p { margin: 0; font-size: 16px; }
-.product-description { margin: 12px 0 0; font-size: 17px; line-height: 1.6; }
-.product-price { margin: 16px 0 0; font-size: 22px; line-height: 1.4; }
+.product-thumbnail img { display: block; width: 42px; height: 56px; object-fit: cover; }
+.product-info { margin-top: 16px; }
+.product-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; }
+.product-heading h2 { margin: 0; font: 400 31px/1.1 'Pirata One', Georgia, serif; }
+.product-heading p { margin: 0; font-size: 13px; }
+.product-description { margin: 9px 0 0; font-size: 14px; line-height: 1.5; }
+.product-price { margin: 10px 0 0; font-size: 18px; line-height: 1.4; }
 .merch-page a:focus-visible, .merch-page button:focus-visible { outline: 2px solid #000; outline-offset: 5px; }
 .product-lightbox { max-width: calc(100vw - 40px); max-height: calc(100svh - 40px); padding: 52px 20px 20px; border: 1px solid #000; background: #f4ecd8; color: #103c2c; }
 .product-lightbox::backdrop { background: rgb(16 30 21 / 80%); }
@@ -29,22 +33,25 @@
 .product-lightbox-close { position: absolute; top: 10px; right: 14px; padding: 5px; border: 0; background: none; color: #000; cursor: pointer; font: 16px/1.2 Georgia, serif; }
 .product-lightbox-caption { margin: 12px 0 0; font-size: 15px; }
 @media (max-width: 760px) {
-  .merch-main { width: calc(100% - 48px); margin-top: 24px; margin-bottom: 56px; }
-  .merch-products { gap: 28px; }
-  .merch-intro { margin-bottom: 32px; }
-  .merch-intro p { font-size: 16px; }
-  .product-heading { display: block; }
-  .product-heading p { margin-top: 8px; }
+  .merch-main { width: calc(100% - 48px); margin-top: 12px; }
+  .merch-map { column-gap: 48px; }
 }
 @media (max-width: 540px) {
-  .merch-products { grid-template-columns: 1fr; gap: 56px; }
-  .merch-intro { align-items: center; gap: 16px; }
-  .merch-intro p { font-size: 15px; }
-  .product-heading { display: flex; }
-  .product-heading p { margin: 0; }
-  .product-heading h2 { font-size: 38px; }
-  .product-info { margin-top: 20px; }
-  .product-description { font-size: 16px; }
+  .merch-page .wordmark { font-size: 32px; }
+  .merch-main { width: calc(100% - 40px); margin-top: 8px; margin-bottom: 40px; }
+  .merch-intro { gap: 16px; margin-bottom: 22px; }
+  .merch-intro h1 { font-size: 38px; }
+  .merch-intro p { font-size: 12px; }
+  .merch-map { --pair-width: min(220px, 72vw); --line-height: 52px; column-gap: 24px; }
+  .product-heading { display: block; }
+  .product-heading h2 { font-size: 27px; }
+  .product-heading p { margin-top: 5px; font-size: 12px; }
+  .product-thumbnails { gap: 6px; margin-top: 10px; }
+  .product-thumbnail img { width: clamp(26px, 8vw, 38px); height: auto; aspect-ratio: 3 / 4; }
+  .product-gallery-caption { font-size: 11px; }
+  .product-info { margin-top: 12px; }
+  .product-description { font-size: 13px; }
+  .product-price { font-size: 17px; }
   .product-lightbox { max-width: calc(100vw - 24px); padding: 48px 12px 12px; }
   .product-lightbox-image { max-width: calc(100vw - 50px); }
 }
