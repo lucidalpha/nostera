@@ -12,6 +12,46 @@
     <script src="merch.js" defer></script>
   </head>
   <body class="merch-page">
+    <svg class="photo-colour-definitions" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="grade-both-shirts" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="1.015 0 0 0 0  0 1.0 0 0 0  0 0 0.965 0 0  0 0 0 1 0" />
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.97" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="0.97" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="0.97" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-white-front" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="1.035 0 0 0 0  0 1.01 0 0 0  0 0 0.94 0 0  0 0 0 1 0" />
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.76" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="0.76" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="0.76" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-white-detail" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="1.025 0 0 0 0  0 1.0 0 0 0  0 0 0.94 0 0  0 0 0 1 0" />
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.78" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="0.78" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="0.78" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-white-angle" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="1.025 0 0 0 0  0 1.0 0 0 0  0 0 0.95 0 0  0 0 0 1 0" />
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.86" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="0.86" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="0.86" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-white-flatlay" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="1.12 0 0 0 0  0 1.02 0 0 0  0 0 0.85 0 0  0 0 0 1 0" />
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.86" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="0.86" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="0.86" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-black-front" color-interpolation-filters="sRGB">
+          <feComponentTransfer><feFuncR type="table" tableValues="0.0 0.1425 0.28 0.4125 0.54 0.6625 0.78 0.8925 1.0" /><feFuncG type="table" tableValues="0.0 0.126641 0.252812 0.378516 0.50375 0.628516 0.752812 0.876641 1.0" /><feFuncB type="table" tableValues="0.0 0.09875 0.205 0.31875 0.44 0.56875 0.705 0.84875 1.0" /></feComponentTransfer>
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="1.045" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="1.045" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="1.045" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-black-detail" color-interpolation-filters="sRGB">
+          <feComponentTransfer><feFuncR type="table" tableValues="0.0 0.126641 0.252812 0.378516 0.50375 0.628516 0.752812 0.876641 1.0" /><feFuncG type="table" tableValues="0.0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1.0" /><feFuncB type="table" tableValues="0.0 0.121719 0.244375 0.367969 0.4925 0.617969 0.744375 0.871719 1.0" /></feComponentTransfer>
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="1.35" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="1.35" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="1.35" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-black-woodland" color-interpolation-filters="sRGB">
+          <feComponentTransfer><feFuncR type="table" tableValues="0.0 0.139219 0.274375 0.405469 0.5325 0.655469 0.774375 0.889219 1.0" /><feFuncG type="table" tableValues="0.0 0.126094 0.251875 0.377344 0.5025 0.627344 0.751875 0.876094 1.0" /><feFuncB type="table" tableValues="0.0 0.102031 0.210625 0.325781 0.4475 0.575781 0.710625 0.852031 1.0" /></feComponentTransfer>
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="0.99" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="0.99" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="0.99" offset="0" /></feComponentTransfer>
+        </filter>
+        <filter id="grade-black-flatlay" color-interpolation-filters="sRGB">
+          <feComponentTransfer><feFuncR type="table" tableValues="0.0 0.131016 0.260313 0.387891 0.51375 0.637891 0.760312 0.881016 1.0" /><feFuncG type="table" tableValues="0.0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1.0" /><feFuncB type="table" tableValues="0.0 0.115156 0.233125 0.353906 0.4775 0.603906 0.733125 0.865156 1.0" /></feComponentTransfer>
+          <feComponentTransfer><feFuncR type="gamma" amplitude="1" exponent="1.13" offset="0" /><feFuncG type="gamma" amplitude="1" exponent="1.13" offset="0" /><feFuncB type="gamma" amplitude="1" exponent="1.13" offset="0" /></feComponentTransfer>
+        </filter>
+      </defs>
+    </svg>
     <header class="site-header">
       <a class="wordmark" href="../" aria-label="NOSTERA - Startseite">NOSTERA</a>
     </header>
@@ -22,7 +62,7 @@
       </div>
       <div class="merch-map">
         <figure class="merch-pair">
-          <img src="../assets/merch/both-shirts.webp" srcset="../assets/merch/both-shirts.webp 800w, ../assets/merch/both-shirts-large.webp 1440w" sizes="(max-width: 700px) 280px, (max-width: 1062px) 340px, (max-width: 1500px) 32vw, 480px" width="800" height="600" alt="White and black NOSTERA T-shirts hanging together in an autumn forest" fetchpriority="high" />
+          <img src="../assets/merch/both-shirts-hq-1280.webp" srcset="../assets/merch/both-shirts-hq-640.webp 640w, ../assets/merch/both-shirts-hq-1280.webp 1280w, ../assets/merch/both-shirts-hq-1920.webp 1920w" sizes="(max-width: 700px) 280px, (max-width: 1062px) 340px, (max-width: 1500px) 32vw, 480px" width="1280" height="960" alt="White and black NOSTERA T-shirts hanging together in an autumn forest" fetchpriority="high" data-photo-grade="both-shirts" style="filter: url(&#x27;#grade-both-shirts&#x27;)" decoding="async" />
         </figure>
         <svg class="merch-connections" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
           <path d="M 430 0 C 415 38, 260 58, 230 100" />
@@ -34,26 +74,23 @@
         </nav>
         <article id="white-shirt" class="merch-product" aria-labelledby="white-title">
           <figure class="product-gallery">
-            <a class="product-zoom" href="../assets/merch/white-front-v2-large.webp" aria-label="White NOSTERA T-shirt with the sun motif, hanging from a branch in the woods – enlarge photograph">
-              <img id="white-photo" class="product-hero" src="../assets/merch/white-front-v2.webp" srcset="../assets/merch/white-front-v2.webp 800w, ../assets/merch/white-front-v2-large.webp 1086w" sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 760px) calc((100vw - 96px) / 2), (max-width: 1688px) calc((100vw - 200px) / 2), 728px" width="800" height="1066" alt="White NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" loading="lazy" />
+            <a class="product-zoom" href="../assets/merch/white-front-hq-full.webp" aria-label="White NOSTERA T-shirt with the sun motif, hanging from a branch in the woods – enlarge photograph">
+              <img id="white-photo" class="product-hero" src="../assets/merch/white-front-hq-1280.webp" srcset="../assets/merch/white-front-hq-640.webp 640w, ../assets/merch/white-front-hq-1280.webp 1280w, ../assets/merch/white-front-hq-1920.webp 1920w" sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 760px) calc((100vw - 96px) / 2), (max-width: 1688px) calc((100vw - 200px) / 2), 728px" width="1280" height="1707" alt="White NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" loading="lazy" data-photo-grade="white-front" style="filter: url(&#x27;#grade-white-front&#x27;)" decoding="async" />
             </a>
-            <figcaption class="product-gallery-caption"><span class="product-gallery-view">Front</span><span class="product-gallery-count" aria-live="polite" aria-atomic="true">1 / 5</span></figcaption>
+            <figcaption class="product-gallery-caption"><span class="product-gallery-view">Front</span><span class="product-gallery-count" aria-live="polite" aria-atomic="true">1 / 4</span></figcaption>
             <p class="product-gallery-help">Swipe to explore the photos.</p>
             <nav class="product-thumbnails" aria-label="White T-shirt photographs">
-              <a class="product-thumbnail" href="../assets/merch/white-front-v2-large.webp" data-src="../assets/merch/white-front-v2.webp" data-srcset="../assets/merch/white-front-v2.webp 800w, ../assets/merch/white-front-v2-large.webp 1086w" data-alt="White NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" data-view="Front" aria-label="White T-shirt: front" aria-controls="white-photo" aria-current="true">
-                <img src="../assets/merch/white-front-v2-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/white-front-hq-full.webp" data-src="../assets/merch/white-front-hq-1280.webp" data-srcset="../assets/merch/white-front-hq-640.webp 640w, ../assets/merch/white-front-hq-1280.webp 1280w, ../assets/merch/white-front-hq-1920.webp 1920w" data-alt="White NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" data-view="Front" aria-label="White T-shirt: front" aria-controls="white-photo" aria-current="true" data-grade="white-front">
+                <img src="../assets/merch/white-front-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="white-front" style="filter: url(&#x27;#grade-white-front&#x27;)" decoding="async" />
               </a>
-              <a class="product-thumbnail" href="../assets/merch/white-detail-v2-large.webp" data-src="../assets/merch/white-detail-v2.webp" data-srcset="../assets/merch/white-detail-v2.webp 800w, ../assets/merch/white-detail-v2-large.webp 1086w" data-alt="Close-up of the colourful NOSTERA sun motif on the white T-shirt" data-view="Detail" aria-label="White T-shirt: detail" aria-controls="white-photo">
-                <img src="../assets/merch/white-detail-v2-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/white-detail-hq-full.webp" data-src="../assets/merch/white-detail-hq-1280.webp" data-srcset="../assets/merch/white-detail-hq-640.webp 640w, ../assets/merch/white-detail-hq-1280.webp 1280w, ../assets/merch/white-detail-hq-1920.webp 1920w" data-alt="Close-up of the colourful NOSTERA sun motif on the white T-shirt" data-view="Detail" aria-label="White T-shirt: detail" aria-controls="white-photo" data-grade="white-detail">
+                <img src="../assets/merch/white-detail-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="white-detail" style="filter: url(&#x27;#grade-white-detail&#x27;)" decoding="async" />
               </a>
-              <a class="product-thumbnail" href="../assets/merch/white-angle-large.webp" data-src="../assets/merch/white-angle.webp" data-srcset="../assets/merch/white-angle.webp 800w, ../assets/merch/white-angle-large.webp 1440w" data-alt="White NOSTERA T-shirt hanging against a tree in the autumn woods" data-view="Another angle" aria-label="White T-shirt: another angle" aria-controls="white-photo">
-                <img src="../assets/merch/white-angle-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/white-angle-hq-full.webp" data-src="../assets/merch/white-angle-hq-1280.webp" data-srcset="../assets/merch/white-angle-hq-640.webp 640w, ../assets/merch/white-angle-hq-1280.webp 1280w, ../assets/merch/white-angle-hq-1920.webp 1920w" data-alt="White NOSTERA T-shirt hanging against a tree in the autumn woods" data-view="Another angle" aria-label="White T-shirt: another angle" aria-controls="white-photo" data-grade="white-angle">
+                <img src="../assets/merch/white-angle-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="white-angle" style="filter: url(&#x27;#grade-white-angle&#x27;)" decoding="async" />
               </a>
-              <a class="product-thumbnail" href="../assets/merch/white-woodland-large.webp" data-src="../assets/merch/white-woodland.webp" data-srcset="../assets/merch/white-woodland.webp 800w, ../assets/merch/white-woodland-large.webp 1440w" data-alt="White NOSTERA T-shirt on a branch, photographed from a wider angle in the woods" data-view="In the woods" aria-label="White T-shirt: in the woods" aria-controls="white-photo">
-                <img src="../assets/merch/white-woodland-thumb.webp" width="120" height="160" alt="" loading="lazy" />
-              </a>
-              <a class="product-thumbnail" href="../assets/merch/white-flatlay-large.webp" data-src="../assets/merch/white-flatlay.webp" data-srcset="../assets/merch/white-flatlay.webp 800w, ../assets/merch/white-flatlay-large.webp 1440w" data-alt="White NOSTERA T-shirt laid flat on the forest floor, with its sun motif visible" data-view="Flat lay" aria-label="White T-shirt: flat lay" aria-controls="white-photo">
-                <img src="../assets/merch/white-flatlay-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/white-flatlay-hq-full.webp" data-src="../assets/merch/white-flatlay-hq-1280.webp" data-srcset="../assets/merch/white-flatlay-hq-640.webp 640w, ../assets/merch/white-flatlay-hq-1280.webp 1280w, ../assets/merch/white-flatlay-hq-1920.webp 1920w" data-alt="White NOSTERA T-shirt laid flat on the forest floor, with its sun motif visible" data-view="Flat lay" aria-label="White T-shirt: flat lay" aria-controls="white-photo" data-grade="white-flatlay">
+                <img src="../assets/merch/white-flatlay-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="white-flatlay" style="filter: url(&#x27;#grade-white-flatlay&#x27;)" decoding="async" />
               </a>
             </nav>
           </figure>
@@ -65,23 +102,23 @@
         </article>
         <article id="black-shirt" class="merch-product" aria-labelledby="black-title">
           <figure class="product-gallery">
-            <a class="product-zoom" href="../assets/merch/black-front-v2-large.webp" aria-label="Black NOSTERA T-shirt with the sun motif, hanging from a branch in the woods – enlarge photograph">
-              <img id="black-photo" class="product-hero" src="../assets/merch/black-front-v2.webp" srcset="../assets/merch/black-front-v2.webp 800w, ../assets/merch/black-front-v2-large.webp 1086w" sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 760px) calc((100vw - 96px) / 2), (max-width: 1688px) calc((100vw - 200px) / 2), 728px" width="800" height="1066" alt="Black NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" loading="lazy" />
+            <a class="product-zoom" href="../assets/merch/black-front-hq-full.webp" aria-label="Black NOSTERA T-shirt with the sun motif, hanging from a branch in the woods – enlarge photograph">
+              <img id="black-photo" class="product-hero" src="../assets/merch/black-front-hq-1280.webp" srcset="../assets/merch/black-front-hq-640.webp 640w, ../assets/merch/black-front-hq-1280.webp 1280w, ../assets/merch/black-front-hq-1920.webp 1920w" sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 760px) calc((100vw - 96px) / 2), (max-width: 1688px) calc((100vw - 200px) / 2), 728px" width="1280" height="1707" alt="Black NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" loading="lazy" data-photo-grade="black-front" style="filter: url(&#x27;#grade-black-front&#x27;)" decoding="async" />
             </a>
             <figcaption class="product-gallery-caption"><span class="product-gallery-view">Front</span><span class="product-gallery-count" aria-live="polite" aria-atomic="true">1 / 4</span></figcaption>
             <p class="product-gallery-help">Swipe to explore the photos.</p>
             <nav class="product-thumbnails" aria-label="Black T-shirt photographs">
-              <a class="product-thumbnail" href="../assets/merch/black-front-v2-large.webp" data-src="../assets/merch/black-front-v2.webp" data-srcset="../assets/merch/black-front-v2.webp 800w, ../assets/merch/black-front-v2-large.webp 1086w" data-alt="Black NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" data-view="Front" aria-label="Black T-shirt: front" aria-controls="black-photo" aria-current="true">
-                <img src="../assets/merch/black-front-v2-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/black-front-hq-full.webp" data-src="../assets/merch/black-front-hq-1280.webp" data-srcset="../assets/merch/black-front-hq-640.webp 640w, ../assets/merch/black-front-hq-1280.webp 1280w, ../assets/merch/black-front-hq-1920.webp 1920w" data-alt="Black NOSTERA T-shirt with the sun motif, hanging from a branch in the woods" data-view="Front" aria-label="Black T-shirt: front" aria-controls="black-photo" aria-current="true" data-grade="black-front">
+                <img src="../assets/merch/black-front-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="black-front" style="filter: url(&#x27;#grade-black-front&#x27;)" decoding="async" />
               </a>
-              <a class="product-thumbnail" href="../assets/merch/black-detail-v2-large.webp" data-src="../assets/merch/black-detail-v2.webp" data-srcset="../assets/merch/black-detail-v2.webp 800w, ../assets/merch/black-detail-v2-large.webp 1086w" data-alt="Close-up of the colourful NOSTERA sun motif on the black T-shirt" data-view="Detail" aria-label="Black T-shirt: detail" aria-controls="black-photo">
-                <img src="../assets/merch/black-detail-v2-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/black-detail-hq-full.webp" data-src="../assets/merch/black-detail-hq-1280.webp" data-srcset="../assets/merch/black-detail-hq-640.webp 640w, ../assets/merch/black-detail-hq-1280.webp 1280w, ../assets/merch/black-detail-hq-1920.webp 1920w" data-alt="Close-up of the colourful NOSTERA sun motif on the black T-shirt" data-view="Detail" aria-label="Black T-shirt: detail" aria-controls="black-photo" data-grade="black-detail">
+                <img src="../assets/merch/black-detail-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="black-detail" style="filter: url(&#x27;#grade-black-detail&#x27;)" decoding="async" />
               </a>
-              <a class="product-thumbnail" href="../assets/merch/black-woodland-large.webp" data-src="../assets/merch/black-woodland.webp" data-srcset="../assets/merch/black-woodland.webp 800w, ../assets/merch/black-woodland-large.webp 1440w" data-alt="Black NOSTERA T-shirt hanging from a branch in an autumn forest" data-view="In the woods" aria-label="Black T-shirt: in the woods" aria-controls="black-photo">
-                <img src="../assets/merch/black-woodland-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/black-woodland-hq-full.webp" data-src="../assets/merch/black-woodland-hq-1280.webp" data-srcset="../assets/merch/black-woodland-hq-640.webp 640w, ../assets/merch/black-woodland-hq-1280.webp 1280w, ../assets/merch/black-woodland-hq-1920.webp 1920w" data-alt="Black NOSTERA T-shirt hanging from a branch in an autumn forest" data-view="In the woods" aria-label="Black T-shirt: in the woods" aria-controls="black-photo" data-grade="black-woodland">
+                <img src="../assets/merch/black-woodland-hq-thumb.webp" width="240" height="180" alt="" loading="lazy" data-photo-grade="black-woodland" style="filter: url(&#x27;#grade-black-woodland&#x27;)" decoding="async" />
               </a>
-              <a class="product-thumbnail" href="../assets/merch/black-flatlay-large.webp" data-src="../assets/merch/black-flatlay.webp" data-srcset="../assets/merch/black-flatlay.webp 800w, ../assets/merch/black-flatlay-large.webp 1440w" data-alt="Black NOSTERA T-shirt laid on autumn leaves, with its sun motif visible" data-view="Flat lay" aria-label="Black T-shirt: flat lay" aria-controls="black-photo">
-                <img src="../assets/merch/black-flatlay-thumb.webp" width="120" height="160" alt="" loading="lazy" />
+              <a class="product-thumbnail" href="../assets/merch/black-flatlay-hq-full.webp" data-src="../assets/merch/black-flatlay-hq-1280.webp" data-srcset="../assets/merch/black-flatlay-hq-640.webp 640w, ../assets/merch/black-flatlay-hq-1280.webp 1280w, ../assets/merch/black-flatlay-hq-1920.webp 1920w" data-alt="Black NOSTERA T-shirt laid on autumn leaves, with its sun motif visible" data-view="Flat lay" aria-label="Black T-shirt: flat lay" aria-controls="black-photo" data-grade="black-flatlay">
+                <img src="../assets/merch/black-flatlay-hq-thumb.webp" width="240" height="320" alt="" loading="lazy" data-photo-grade="black-flatlay" style="filter: url(&#x27;#grade-black-flatlay&#x27;)" decoding="async" />
               </a>
             </nav>
           </figure>

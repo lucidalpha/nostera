@@ -56,3 +56,5 @@
   .product-lightbox { max-width: calc(100vw - 24px); padding: 48px 12px 12px; }
   .product-lightbox-image { max-width: calc(100vw - 50px); }
 }
+
+.photo-colour-definitions { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }

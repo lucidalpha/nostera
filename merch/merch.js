@@ -34,6 +34,8 @@ for (const product of document.querySelectorAll('.merch-product')) {
       hero.srcset = thumbnail.dataset.srcset;
       hero.src = thumbnail.dataset.src;
       hero.alt = thumbnail.dataset.alt;
+      hero.dataset.photoGrade = thumbnail.dataset.grade;
+      hero.style.filter = `url("#grade-${thumbnail.dataset.grade}")`;
       zoom.href = thumbnail.href;
       zoom.setAttribute('aria-label', `${thumbnail.dataset.alt} – enlarge photograph`);
       caption.textContent = thumbnail.dataset.view;
@@ -49,6 +51,8 @@ for (const product of document.querySelectorAll('.merch-product')) {
     event.preventDefault();
     lightboxImage.src = zoom.href;
     lightboxImage.alt = hero.alt;
+    lightboxImage.dataset.photoGrade = hero.dataset.photoGrade;
+    lightboxImage.style.filter = hero.style.filter;
     lightboxCaption.textContent = hero.alt;
     lightbox.showModal();
   });
