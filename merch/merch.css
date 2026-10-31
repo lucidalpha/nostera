@@ -6,7 +6,7 @@
 .merch-intro p { margin: 0; font-size: 17px; line-height: 1.5; text-align: right; }
 .merch-map { --pair-width: clamp(340px, 32vw, 480px); --line-height: 72px; position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(48px, 8vw, 144px); row-gap: var(--line-height); isolation: isolate; }
 .merch-pair { grid-column: 1 / -1; justify-self: center; width: var(--pair-width); margin: 0; position: relative; z-index: 1; }
-.merch-pair img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.merch-pair img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
 .merch-connections { position: absolute; top: calc(var(--pair-width) * .75); left: 0; width: 100%; height: var(--line-height); fill: none; stroke: #000; stroke-width: 1.2; pointer-events: none; z-index: 0; }
 .merch-connections path { vector-effect: non-scaling-stroke; }
 .merch-mobile-nav { display: none; }
