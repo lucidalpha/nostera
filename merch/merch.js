@@ -34,8 +34,14 @@ for (const product of document.querySelectorAll('.merch-product')) {
       hero.srcset = thumbnail.dataset.srcset;
       hero.src = thumbnail.dataset.src;
       hero.alt = thumbnail.dataset.alt;
-      hero.dataset.photoGrade = thumbnail.dataset.grade;
-      hero.style.filter = `url("#grade-${thumbnail.dataset.grade}")`;
+      hero.dataset.cutout = thumbnail.dataset.cutout || 'false';
+      if (thumbnail.dataset.grade) {
+        hero.dataset.photoGrade = thumbnail.dataset.grade;
+        hero.style.filter = `url("#grade-${thumbnail.dataset.grade}")`;
+      } else {
+        delete hero.dataset.photoGrade;
+        hero.style.removeProperty('filter');
+      }
       zoom.href = thumbnail.href;
       zoom.setAttribute('aria-label', `${thumbnail.dataset.alt} – enlarge photograph`);
       caption.textContent = thumbnail.dataset.view;
