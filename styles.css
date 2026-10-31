@@ -290,3 +290,13 @@ body > main { flex: 1; }
   .movement-main { padding: 56px 20px 96px; }
   .movement-scene { width: 100%; max-width: 430px; aspect-ratio: 4 / 5; }
 }
+
+/* Align each main page title opposite the NOSTERA wordmark. */
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.page-title { margin: 0; color: #000; font: 400 52px/1 'Pirata One', Georgia, serif; text-align: right; white-space: nowrap; }
+.page-title-merch { color: #0000ff; }
+.page-title-member { color: #103c2c; }
+@media (max-width: 600px) {
+  .site-header { gap: 12px; }
+  .page-title { font-size: clamp(24px, 7vw, 38px); }
+}
