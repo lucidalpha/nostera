@@ -21,6 +21,7 @@
 .product-heading h2 { margin: 0; font: 400 42px/1.1 'Pirata One', Georgia, serif; }
 .product-heading p { margin: 0; font-size: 16px; }
 .product-description { margin: 12px 0 0; font-size: 17px; line-height: 1.6; }
+.product-price { margin: 16px 0 0; font-size: 22px; line-height: 1.4; }
 .merch-page a:focus-visible, .merch-page button:focus-visible { outline: 2px solid #000; outline-offset: 5px; }
 .product-lightbox { max-width: calc(100vw - 40px); max-height: calc(100svh - 40px); padding: 52px 20px 20px; border: 1px solid #000; background: #f4ecd8; color: #103c2c; }
 .product-lightbox::backdrop { background: rgb(16 30 21 / 80%); }
