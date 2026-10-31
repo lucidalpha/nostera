@@ -1,14 +1,10 @@
-/* Wide photo mindmap on desktop; full-width product galleries on phones. */
+/* Product galleries side by side on desktop and stacked on phones. */
 .merch-page { color: #103c2c; font-family: Georgia, serif; }
 .merch-main { width: min(calc(100% - 88px), 1600px); margin: 24px auto 64px; }
 .merch-intro { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 24px; }
 .merch-intro h1 { margin: 0; color: #0000ff; font: 400 56px/1 'Pirata One', Georgia, serif; }
 .merch-intro p { margin: 0; font-size: 17px; line-height: 1.5; text-align: right; }
-.merch-map { --pair-width: clamp(340px, 32vw, 480px); --line-height: 72px; position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(48px, 8vw, 144px); row-gap: var(--line-height); isolation: isolate; }
-.merch-pair { grid-column: 1 / -1; justify-self: center; width: var(--pair-width); margin: 0; position: relative; z-index: 1; }
-.merch-pair img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
-.merch-connections { position: absolute; top: calc(var(--pair-width) * .75); left: 0; width: 100%; height: var(--line-height); fill: none; stroke: #000; stroke-width: 1.2; pointer-events: none; z-index: 0; }
-.merch-connections path { vector-effect: non-scaling-stroke; }
+.merch-map { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(48px, 8vw, 144px); row-gap: 32px; isolation: isolate; }
 .merch-mobile-nav { display: none; }
 .merch-product { position: relative; width: 100%; min-width: 0; justify-self: center; z-index: 1; scroll-margin-top: 24px; }
 .product-gallery { margin: 0; }
@@ -42,8 +38,8 @@
   .merch-intro { gap: 16px; margin-bottom: 24px; }
   .merch-intro h1 { font-size: 42px; }
   .merch-intro p { font-size: 14px; }
-  .merch-map { --pair-width: min(280px, calc(100vw - 48px)); --line-height: 52px; grid-template-columns: minmax(0, 1fr); row-gap: 0; }
-  .merch-mobile-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: var(--line-height) 0 32px; position: relative; z-index: 1; }
+  .merch-map { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+  .merch-mobile-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 32px; position: relative; z-index: 1; }
   .merch-mobile-nav a { display: grid; place-items: center; min-height: 48px; padding: 8px 12px; border: 1px solid #000; border-radius: 50%; background: #f4ecd8; color: #000; text-decoration: none; font: 400 26px/1.1 'Pirata One', Georgia, serif; }
   .merch-mobile-nav a:first-child { color: #103c2c; }
   .merch-product { margin-bottom: 48px; }
